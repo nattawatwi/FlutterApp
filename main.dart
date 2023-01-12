@@ -107,13 +107,20 @@ class HomeScreen extends StatelessWidget {
         },
         child: Column(
           children: [
-            CircleAvatar(radius: 65, backgroundImage: NetworkImage(imgPath)),
+            SizedBox(
+                child: CircleAvatar(
+                    radius: 70, backgroundImage: NetworkImage(imgPath))),
             Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(10),
-                margin: EdgeInsets.all(10),
-                color: color,
-                child: Text(blocktext)),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 3.0,
+                    color: color,
+                  ),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Center(child: Text(blocktext))),
           ],
         ),
       ),
